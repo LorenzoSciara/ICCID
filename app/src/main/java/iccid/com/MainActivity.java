@@ -59,15 +59,22 @@ public class MainActivity extends AppCompatActivity {
         SubscriptionManager sm = (SubscriptionManager) getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
         List<SubscriptionInfo> sis = sm.getAccessibleSubscriptionInfoList();
 
-        SubscriptionInfo si = sis.get(0);
-        String iccID = si.getIccId();
-
-        if(!phoneAccountHandle.isEmpty()){
-            ICCID=phoneAccountHandle.get(0).toString();
+        if(!sis.isEmpty()){
+            SubscriptionInfo si = sis.get(0);
+            ICCID = si.getIccId();
         }
         else{
             ICCID="No SIMs are present";
         }
+
+
+        /*if(!phoneAccountHandle.isEmpty()){
+            ICCID=phoneAccountHandle.get(0).toString();
+        }
+        else{
+            ICCID="No SIMs are present";
+        }*/
+
         textViewICCID.setText(ICCID);
     }
 
