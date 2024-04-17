@@ -1,4 +1,4 @@
-package iccid.com;
+package com.example.myapplication2;
 
 import org.junit.Test;
 
